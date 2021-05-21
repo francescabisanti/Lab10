@@ -1,6 +1,7 @@
 package it.polito.tdp.rivers.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class River {
@@ -8,7 +9,21 @@ public class River {
 	private String name;
 	private double flowAvg;
 	private List<Flow> flows;
+	private Date maxDate;
+	private Date minDate;
+	private int numeroM;
 	
+	
+	
+	public River(String name, double flowAvg, Date maxDate, Date minDate, int numeroM) {
+		
+		this.name = name;
+		this.flowAvg = flowAvg;
+		this.maxDate = maxDate;
+		this.minDate = minDate;
+		this.numeroM = numeroM;
+	}
+
 	public River(int id) {
 		this.id = id;
 	}
@@ -17,6 +32,8 @@ public class River {
 		this.id = id;
 		this.name = name;
 	}
+	
+	
 
 	public String getName() {
 		return name;
@@ -51,11 +68,39 @@ public class River {
 			flows = new ArrayList<Flow>();
 		return flows;
 	}
+	
+	
+	
+
+	public Date getMaxDate() {
+		return maxDate;
+	}
+
+	public void setMaxDate(Date maxDate) {
+		this.maxDate = maxDate;
+	}
+
+	public Date getMinDate() {
+		return minDate;
+	}
+
+	public void setMinDate(Date minDate) {
+		this.minDate = minDate;
+	}
+
+	public int getNumeroM() {
+		return numeroM;
+	}
+
+	public void setNumeroM(int numeroM) {
+		this.numeroM = numeroM;
+	}
 
 	@Override
 	public String toString() {
 		return name;
 	}
+	
 
 	@Override
 	public int hashCode() {
